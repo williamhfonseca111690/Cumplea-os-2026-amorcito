@@ -245,7 +245,10 @@
 
   var timers = [];
   function later(fn, ms) { var id = setTimeout(fn, ms); timers.push(id); return id; }
-  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+  function clearTimers() {
+    timers.forEach(function (id) { clearTimeout(id); clearInterval(id); });
+    timers = [];
+  }
 
   /* =========================================================
      4. UTILIDADES DE DOM
@@ -442,16 +445,17 @@
     el.loadStatus.textContent = LOAD_MESSAGES[0];
 
     var DURATION = 4000;
-    var start = null;
+    var start = Date.now();
     var msgIdx = 0;
 
     setTimeout(function () {
       el.loadBar.style.transition = "width .25s linear";
     }, 40);
 
-    function frame(ts) {
-      if (start === null) start = ts;
-      var t = Math.min((ts - start) / DURATION, 1);
+    // setInterval (y no requestAnimationFrame) para que la barra no se
+    // congele si la pestaña queda en segundo plano a mitad del suspenso.
+    var iv = setInterval(function () {
+      var t = Math.min((Date.now() - start) / DURATION, 1);
       var pct = Math.round(t * 100);
       el.loadBar.style.width = pct + "%";
       el.loadPct.textContent = pct + "%";
@@ -468,10 +472,12 @@
         el.loadStatus.style.animation = "";
       }
 
-      if (t < 1) requestAnimationFrame(frame);
-      else later(showResult, 320);
-    }
-    requestAnimationFrame(frame);
+      if (t >= 1) {
+        clearInterval(iv);
+        later(showResult, 320);
+      }
+    }, 80);
+    timers.push(iv);
   }
 
   /* =========================================================
