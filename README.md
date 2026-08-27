@@ -1,4 +1,4 @@
-# Quiz Oficial · Plan de Cumpleaños de Adriana 💗
+# Quiz Oficial · El Plan de tu Cumpleaños 💗
 
 Aplicación web de una sola página: un quiz interactivo de 10 preguntas con estética
 romántica y de videojuego (paleta fucsia + azul rey oscuro), sistema de puntaje oculto,

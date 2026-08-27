@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#070F3D" />
-<title>Quiz Oficial · Plan de Cumpleaños de Adriana</title>
-<meta name="description" content="Evaluación psicométrica altamente científica para determinar el plan de cumpleaños de Adriana." />
+<title>Quiz Oficial · El Plan de tu Cumpleaños</title>
+<meta name="description" content="Evaluación altamente científica para descubrir tu plan de cumpleaños." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -33,20 +33,14 @@
     <span class="music-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
   </button>
 
-  <!-- ====== AVISO DE "HAY MAS ABAJO" ====== -->
-  <div class="scroll-hint" id="scrollHint" hidden aria-hidden="true">
-    <span>hay algo más abajo</span>
-    <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-  </div>
-
-  <main class="stage">
+  <main class="stage" id="stage">
 
     <!-- ====================================================== -->
-    <!-- 1. PANTALLA DE INICIO                                  -->
+    <!-- 1. INICIO                                              -->
     <!-- ====================================================== -->
     <section class="screen" id="screen-intro" aria-labelledby="introTitle">
-      <div class="card card--intro">
-        <p class="eyebrow"><span class="dot"></span> Expediente confidencial · Sujeto: Adriana</p>
+      <div class="card">
+        <p class="eyebrow"><span class="dot"></span> Confidencial · Sujeto: mi amorcito</p>
 
         <h1 class="title" id="introTitle">
           <span class="title__small">Hoy es tu día</span>
@@ -55,11 +49,9 @@
         </h1>
 
         <div class="prose">
-          <p>Adriana, hoy es tu día y llevo rato pensando cómo empezar esto sin que me dé pena. Nada. No se me ocurrió nada. Así que arranco de una.</p>
-          <p>Me gusta hacer planes contigo. Muchísimo. Me gusta que se nos ocurra algo y que a los dos minutos ya estemos hablando de la hora, del clima, de qué nos vamos a poner. Me gusta que contigo la espera también sea bonita, y eso no me pasa con nadie más.</p>
-          <p>Y como no te iba a decir así de fácil qué vamos a hacer, me tocó inventarme esto. Es una <strong>evaluación psicométrica de altísimo rigor científico</strong>. Mentira. Pero suena serio, ¿cierto?</p>
-          <p>Contesta con calma, sin pensarlo mucho. Al final el sistema decide, y yo obedezco.</p>
-          <p class="prose__love">Te amo. Muchísimo. Mucho más de lo que me cabe acá.</p>
+          <p>Amorcito, mi parte favorita de la vida es el tiempo que paso contigo. No importa qué estemos haciendo: si estás tú, ya es un buen plan.</p>
+          <p>Hoy quiero regalarte otro rato juntos. Y como no te lo iba a decir así de fácil, me inventé esto.</p>
+          <p class="prose__love">Te amo. Muchísimo.</p>
         </div>
 
         <div class="welcome">
@@ -67,35 +59,27 @@
           <strong class="welcome__t">Quiz Oficial para Descubrir tu Plan de Cumpleaños</strong>
         </div>
 
-        <div class="meta-row">
-          <div class="meta"><span class="meta__k">Preguntas</span><span class="meta__v">10</span></div>
-          <div class="meta"><span class="meta__k">Duración</span><span class="meta__v">3 min</span></div>
-          <div class="meta"><span class="meta__k">Validez</span><span class="meta__v">Dudosa</span></div>
-        </div>
-
         <button class="btn btn--primary btn--xl" id="btnStart" type="button">
           <span>Iniciar el Quiz</span>
           <svg viewBox="0 0 24 24" class="btn__arrow" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
-        <p class="fineprint">Al presionar aceptas unos términos y condiciones que no existen.</p>
       </div>
     </section>
 
     <!-- ====================================================== -->
-    <!-- 2. PANTALLA DE PREGUNTAS                               -->
+    <!-- 2. PREGUNTAS                                           -->
     <!-- ====================================================== -->
     <section class="screen" id="screen-quiz" aria-labelledby="qText">
-      <div class="card card--quiz">
+      <div class="card">
         <header class="quiz-head">
           <div class="quiz-head__top">
             <span class="chip" id="qCounter">Pregunta 1 de 10</span>
-            <span class="chip chip--ghost" id="qDept">Dpto. de Talento Humano Afectivo</span>
+            <span class="chip chip--ghost" id="qDept"></span>
           </div>
           <div class="progress"><div class="progress__bar" id="qProgress"></div></div>
         </header>
 
         <div class="q-body">
-          <p class="q-tag" id="qTag"></p>
           <h2 class="q-text" id="qText">Cargando…</h2>
           <div class="options" id="qOptions" role="group" aria-label="Opciones de respuesta"></div>
         </div>
@@ -114,10 +98,10 @@
     </section>
 
     <!-- ====================================================== -->
-    <!-- 3. PANTALLA DE CARGA                                   -->
+    <!-- 3. CARGA                                               -->
     <!-- ====================================================== -->
     <section class="screen" id="screen-loading" aria-live="polite">
-      <div class="card card--loading">
+      <div class="card card--center">
         <div class="spinner" aria-hidden="true">
           <span class="spinner__ring"></span>
           <span class="spinner__ring spinner__ring--2"></span>
@@ -131,41 +115,46 @@
     </section>
 
     <!-- ====================================================== -->
-    <!-- 4. PANTALLA DE RESULTADOS                              -->
+    <!-- 4. EL PLAN                                             -->
     <!-- ====================================================== -->
-    <section class="screen" id="screen-result">
-      <div class="card card--result">
-
-        <div class="result-block" id="resultBlock">
-          <p class="eyebrow eyebrow--center"><span class="dot"></span> Resultado oficial · Confiabilidad 99.9%</p>
-          <p class="result-lead">Tu siguiente plan con tu amorcito será…</p>
-          <div class="plan">
-            <span class="plan__emoji" id="planEmoji">✨</span>
-            <h2 class="plan__name" id="planName"></h2>
-            <p class="plan__desc" id="planDesc"></p>
-            <ul class="plan__specs" id="planSpecs"></ul>
-          </div>
-          <div class="score-bars" id="scoreBars" aria-hidden="true"></div>
+    <section class="screen" id="screen-plan">
+      <div class="card card--center">
+        <p class="eyebrow eyebrow--center"><span class="dot"></span> Resultado oficial · Confiabilidad 99.9%</p>
+        <p class="result-lead">Tu siguiente plan con tu amorcito será…</p>
+        <div class="plan">
+          <span class="plan__emoji" id="planEmoji">✨</span>
+          <h2 class="plan__name" id="planName"></h2>
+          <p class="plan__desc" id="planDesc"></p>
+          <ul class="plan__specs" id="planSpecs"></ul>
         </div>
+        <div class="score-bars" id="scoreBars" aria-hidden="true"></div>
+      </div>
+    </section>
 
-        <div class="twist" id="twistBlock" hidden>
-          <div class="twist__divider"><span>pero…</span></div>
-          <p class="twist__q">¿Será?</p>
-          <p class="twist__when">Lo descubrirás este <strong>sábado 29 de agosto</strong> de <strong>4pm a 7pm</strong>.</p>
-        </div>
+    <!-- ====================================================== -->
+    <!-- 5. EL GIRO                                             -->
+    <!-- ====================================================== -->
+    <section class="screen" id="screen-twist">
+      <div class="card card--center">
+        <p class="twist__q">¿Será?</p>
+        <p class="twist__when">Descúbrelo este <strong>sábado 29 de agosto</strong>, de <strong>4pm a 7pm</strong>.</p>
+        <button class="btn btn--primary btn--wide" id="btnInvite" type="button">
+          <span>Una última cosa</span>
+          <svg viewBox="0 0 24 24" class="btn__arrow" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
 
-        <div class="invite" id="inviteBlock" hidden>
-          <div class="invite__inner">
-            <h3 class="invite__title">La invitación</h3>
-            <p>El lugar es <strong>sorpresa</strong>, así que todavía no te lo digo. Por ahora lo único que necesitas saber es el día y la hora.</p>
-            <p class="invite__dress">No existe etiqueta de vestuario. Ve cómoda como siempre vistes, mi niña bonita.</p>
-            <p class="invite__sign">Te amo, mi niña bonita.<br /><span>tu amorcito</span> 💗</p>
-          </div>
-          <button class="btn btn--ghost btn--wide" id="btnRestart" type="button">
-            <span>Repetir la evaluación</span>
-          </button>
-        </div>
-
+    <!-- ====================================================== -->
+    <!-- 6. COMO IR VESTIDA                                     -->
+    <!-- ====================================================== -->
+    <section class="screen" id="screen-invite">
+      <div class="card card--center">
+        <p class="invite__dress">No existe etiqueta de vestuario. Ve cómoda como siempre vistes, mi niña bonita.</p>
+        <p class="invite__sign">Te amo <span>💗</span></p>
+        <button class="btn btn--ghost btn--wide" id="btnRestart" type="button">
+          <span>Repetir la evaluación</span>
+        </button>
       </div>
     </section>
 
