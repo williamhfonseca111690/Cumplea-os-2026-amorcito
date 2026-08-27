@@ -113,29 +113,29 @@
   var QUESTIONS = [
     {
       dept: "Área de Horarios",
-      text: "Son las 5 de la mañana y suena la alarma. ¿Qué te hace levantar?",
+      text: "Son las 5 de la mañana y suena la alarma. ¿Qué está pasando?",
       options: [
-        { t: "Saber que hay algo calientico esperándome. Solo por eso.", w: { penumbra: 3 } },
-        { t: "Que si no salgo ya, me va a coger la fila y el trancón.", w: { multitud: 3 } },
-        { t: "Nada. Me quedo oyendo si eso es la alarma o es la lluvia.", w: { pluvia: 3 } }
+        { t: "Nada urgente. Me quedo cinco minuticos más, bien tapada.", w: { penumbra: 3 } },
+        { t: "Ya voy para el gimnasio. Eso no se discute con nadie.", w: { multitud: 3 } },
+        { t: "Me levanté a mirar por la ventana cómo va a estar el día.", w: { pluvia: 3 } }
       ]
     },
     {
       dept: "Área de Sorpresas",
       text: "Te llevo a un sitio y en la puerta no hay nada: ni letrero, ni menú, ni luz. Solo un señor mirándote.",
       options: [
-        { t: "Entro. Cuando no hay letrero es porque ahí sí sabe bueno.", w: { penumbra: 3 } },
-        { t: "Le pregunto al señor cuánta gente hay adentro.", w: { multitud: 2, pluvia: 1 } },
-        { t: "Le pregunto al señor si adentro hay techo.", w: { pluvia: 3 } }
+        { t: "Entro. Cuando no hay letrero es porque ahí sí sabe bueno.", w: { penumbra: 4 } },
+        { t: "Le pregunto al señor cuánta gente hay adentro.", w: { multitud: 3 } },
+        { t: "No entro hasta que alguien me diga qué hay ahí exactamente.", w: { pluvia: 3 } }
       ]
     },
     {
-      dept: "Área de Clima",
-      text: "Salimos con sol radiante. A los veinte minutos está cayendo un aguacero de esos.",
+      dept: "Área de Talentos",
+      text: "¿Cuál de tus talentos deberíamos poner en la hoja de vida?",
       options: [
-        { t: "Nos metemos al primer sitio que tenga puerta y ahí nos quedamos.", w: { penumbra: 3 } },
-        { t: "Sigo caminando. Ver a todo el mundo corriendo es un espectáculo.", w: { multitud: 3 } },
-        { t: "Me quedo quieta y te miro. Yo sabía. Yo siempre sé.", w: { pluvia: 3 } }
+        { t: "Darme cuenta de detalles que nadie más nota.", w: { penumbra: 3 } },
+        { t: "Aguantar una hora de pie sin quejarme ni una vez.", w: { multitud: 3 } },
+        { t: "Tener paciencia infinita cuando algo vale la pena.", w: { pluvia: 3 } }
       ]
     },
     {
@@ -144,7 +144,7 @@
       options: [
         { t: "Me bajo en la siguiente y me tomo algo en un sitio vacío.", w: { penumbra: 3 } },
         { t: "Nada. Eso venía incluido en el combo, ya lo tenía asumido.", w: { multitud: 4 } },
-        { t: "Le echo la culpa a la lluvia, que fue la que llenó el bus.", w: { pluvia: 3 } }
+        { t: "Respiro y cuento hasta diez. Casi siempre funciona.", w: { pluvia: 2 } }
       ]
     },
     {
@@ -153,7 +153,7 @@
       options: [
         { t: "En una foto de la mesa, con esa lucecita amarilla que sale bonita.", w: { penumbra: 3 } },
         { t: "En veinte fotos de desconocidos haciendo cosas inexplicables.", w: { multitud: 4 } },
-        { t: "En un video de diez minutos del agua cayendo del techo.", w: { pluvia: 3 } }
+        { t: "En una sola foto, pero bien pensada y bien encuadrada.", w: { pluvia: 2 } }
       ]
     },
     {
@@ -162,16 +162,16 @@
       options: [
         { t: "Un pocillo viejo, de esos que uno agarra con las dos manos.", w: { penumbra: 3 } },
         { t: "Un vaso de plástico, que igual se me va a caer.", w: { multitud: 3 } },
-        { t: "Un frasco con tapa. Por si hay que guardar algo… líquido.", w: { pluvia: 4 } }
+        { t: "Un frasco con tapa y etiqueta. Todo debe estar marcado.", w: { pluvia: 4 } }
       ]
     },
     {
       dept: "Área de Confianza",
-      text: "Te digo «pruébalo, confía en mí» y se me nota que no me estás creyendo.",
+      text: "Te digo «pruébalo, confía en mí» y se te nota que no me crees.",
       options: [
         { t: "Cierro los ojos y pruebo. Después me arrepiento, pero pruebo.", w: { penumbra: 4 } },
         { t: "Pruebas tú primero y yo te grabo la cara.", w: { multitud: 3 } },
-        { t: "Primero: ¿eso de dónde salió y cuánto tiempo lleva ahí?", w: { pluvia: 3 } }
+        { t: "Primero: ¿eso qué es, de dónde salió y quién lo hizo?", w: { pluvia: 3 } }
       ]
     },
     {
@@ -189,7 +189,7 @@
       options: [
         { t: "Los dos escondidos, compartiendo algo caliente, sin que nadie nos vea.", w: { penumbra: 4 } },
         { t: "Los dos mirándonos, con doscientos desconocidos empujándonos.", w: { multitud: 4 } },
-        { t: "Los dos empapados, sin paraguas y sin salir corriendo.", w: { pluvia: 4 } }
+        { t: "Los dos bajo un aguacero, sin paraguas y sin salir corriendo.", w: { pluvia: 4 } }
       ]
     },
     {
@@ -197,8 +197,8 @@
       text: "Última, y de esta depende todo: ¿qué tan dispuesta estás a que te sorprendan?",
       options: [
         { t: "Muchísimo. Sorpréndeme, que yo confío en ti.", w: { penumbra: 2, multitud: 1, pluvia: 1 } },
-        { t: "Dispuesta, pero avísame si me toca caminar mucho.", w: { multitud: 2, penumbra: 1 } },
-        { t: "Dispuesta, aunque me gustaría saber si llevo paraguas.", w: { pluvia: 2, multitud: 1 } }
+        { t: "Dispuesta, pero dime si me toca caminar mucho.", w: { multitud: 2, penumbra: 1 } },
+        { t: "Dispuesta, pero dime si llevo paraguas.", w: { pluvia: 2, multitud: 1 } }
       ]
     }
   ];
