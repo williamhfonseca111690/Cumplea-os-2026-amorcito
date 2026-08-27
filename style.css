@@ -50,7 +50,9 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+/* Sin scroll-behavior:smooth — animar el scroll global hace que la página
+   se sienta "pegada" y difícil de subir cuando aparece contenido nuevo. */
+html{ -webkit-text-size-adjust:100%; }
 
 body{
   min-height:100%;
@@ -148,6 +150,26 @@ svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-wi
 .music-toggle__bars i:nth-child(4){animation-delay:.48s}
 .music-toggle.is-playing .music-toggle__bars i{animation-play-state:running;opacity:1}
 @keyframes eq{0%,100%{height:4px}50%{height:15px}}
+
+/* ==========================================================
+   AVISO "HAY MAS ABAJO"
+   ========================================================== */
+.scroll-hint{
+  position:fixed;z-index:55;
+  left:50%;bottom:calc(78px + env(safe-area-inset-bottom));
+  transform:translate(-50%,14px);
+  display:flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:999px;pointer-events:none;
+  border:1px solid var(--line-strong);
+  color:var(--blush);font-size:.76rem;font-weight:500;letter-spacing:.03em;
+  background:linear-gradient(140deg,rgba(193,10,114,.72),rgba(11,22,85,.90));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 12px 30px -12px rgba(2,5,25,.95);
+  opacity:0;transition:opacity .4s ease,transform .4s var(--ease);
+}
+.scroll-hint.is-on{opacity:1;transform:translate(-50%,0)}
+.scroll-hint svg{width:15px;height:15px;flex:none;animation:nudge 1.5s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
 
 /* ==========================================================
    ESCENARIO Y PANTALLAS

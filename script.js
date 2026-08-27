@@ -119,103 +119,103 @@
 
   var QUESTIONS = [
     {
-      tag: "Escala de disponibilidad circadiana",
-      dept: "Dpto. de Talento Humano Afectivo",
-      text: "En términos estrictamente operativos: ¿a qué hora del día su cerebro alcanza su máximo rendimiento?",
+      tag: "Tema: la hora",
+      dept: "Área de Horarios",
+      text: "¿A qué hora del día te sientes mejor?",
       options: [
-        { t: "A las 5:30 a.m., cuando el mundo todavía está en modo borrador.", w: { penumbra: 3 } },
-        { t: "En hora pico. Necesito energía humana concentrada a mi alrededor.", w: { multitud: 3 } },
-        { t: "Cuando el cielo se pone gris y huele a que algo va a caer.", w: { pluvia: 3 } }
+        { t: "Bien temprano, tipo 5 de la mañana, cuando nadie más está despierto.", w: { penumbra: 3 } },
+        { t: "En plena hora pico, con gente por todos lados.", w: { multitud: 3 } },
+        { t: "Cuando el cielo se pone gris y se siente que va a llover.", w: { pluvia: 3 } }
       ]
     },
     {
-      tag: "Prueba de tolerancia a la penumbra",
-      dept: "Subgerencia de Misterios Menores",
-      text: "La llevan con los ojos vendados a un lugar que no tiene letrero en la puerta. Su primera reacción:",
+      tag: "Prueba de valentía",
+      dept: "Área de Sorpresas",
+      text: "Te tapan los ojos y te llevan a un lugar que no tiene ni letrero en la puerta. ¿Qué haces?",
       options: [
-        { t: "Entro. Los mejores lugares del mundo no tienen letrero.", w: { penumbra: 3 } },
-        { t: "Pido que me describan todo en voz alta, en detalle, mientras camino.", w: { multitud: 2, pluvia: 1 } },
-        { t: "Antes de nada verifico una sola cosa: si hay techo.", w: { pluvia: 3 } }
+        { t: "Entro feliz. Los mejores lugares no tienen letrero.", w: { penumbra: 3 } },
+        { t: "Pido que me vayan contando todo lo que ven.", w: { multitud: 2, pluvia: 1 } },
+        { t: "Primero pregunto una sola cosa: si hay techo.", w: { pluvia: 3 } }
       ]
     },
     {
-      tag: "Inventario de talentos no remunerados",
-      dept: "Comité de Habilidades Blandas",
-      text: "Su talento más subestimado por la sociedad es:",
+      tag: "Tema: tus talentos",
+      dept: "Área de Talentos",
+      text: "¿Cuál de estos es tu mejor talento?",
       options: [
-        { t: "Distinguir matices que nadie más alcanza a percibir.", w: { penumbra: 3 } },
-        { t: "Mantener el equilibrio sobre superficies inestables y en movimiento.", w: { multitud: 3 } },
-        { t: "Esperar con paciencia infinita a que algo caiga del cielo.", w: { pluvia: 3 } }
+        { t: "Notar detalles chiquitos que nadie más nota.", w: { penumbra: 3 } },
+        { t: "No perder el equilibrio ni cuando todo se está moviendo.", w: { multitud: 3 } },
+        { t: "Tener toda la paciencia del mundo para esperar.", w: { pluvia: 3 } }
       ]
     },
     {
-      tag: "Módulo de gestión del caos",
-      dept: "Vicepresidencia de Aglomeraciones",
-      text: "Defina «multitud» en una sola frase. Sea honesta, esto es confidencial.",
+      tag: "Tema: la gente",
+      dept: "Área de Multitudes",
+      text: "Cuando hay muchísima gente alrededor, ¿cómo te sientes?",
       options: [
-        { t: "Tres personas y un secreto bien guardado.", w: { penumbra: 3 } },
-        { t: "Mi hábitat natural. Yo florezco entre desconocidos.", w: { multitud: 4 } },
-        { t: "Algo que se disuelve solo cuando empieza a llover.", w: { pluvia: 3 } }
+        { t: "Prefiero poca gente y una buena conversación.", w: { penumbra: 3 } },
+        { t: "Feliz. Me gusta ver gente por todos lados.", w: { multitud: 4 } },
+        { t: "Tranquila: si empieza a llover, todos se van y listo.", w: { pluvia: 3 } }
       ]
     },
     {
-      tag: "Evaluación de competencias documentales",
-      dept: "Unidad de Registro Visual",
-      text: "Le entregan una cámara y exactamente treinta segundos. ¿Qué retrata?",
+      tag: "Tema: fotos",
+      dept: "Área de Fotografía",
+      text: "Te paso mi celular y tienes treinta segundos. ¿Qué foto tomas?",
       options: [
-        { t: "Un recipiente sobre una mesa, iluminado apenas por una vela.", w: { penumbra: 3 } },
-        { t: "Rostros. Muchos. Todos con historia y ninguno posando.", w: { multitud: 4 } },
-        { t: "El reflejo del cielo en un charco de la calle.", w: { pluvia: 3 } }
+        { t: "Algo sencillo sobre una mesa, con luz de vela.", w: { penumbra: 3 } },
+        { t: "Caras. Muchas caras, y ninguna posando.", w: { multitud: 4 } },
+        { t: "El cielo reflejado en un charco de la calle.", w: { pluvia: 3 } }
       ]
     },
     {
-      tag: "Análisis de afinidad con recipientes",
-      dept: "Oficina de Envases y Continentes",
-      text: "Elija un recipiente. No pregunte para qué. La pregunta es la pregunta.",
+      tag: "Escoge uno",
+      dept: "Área de Vasos y Tazas",
+      text: "Escoge uno. No preguntes para qué.",
       options: [
-        { t: "Una taza de peltre, ligeramente abollada, con historia encima.", w: { penumbra: 3 } },
-        { t: "Un vaso que sostengo con una mano mientras con la otra me agarro de algo.", w: { multitud: 3 } },
-        { t: "Un frasco de vidrio esterilizado, con etiqueta y fecha.", w: { pluvia: 4 } }
+        { t: "Una taza vieja, de esas que ya tienen historia.", w: { penumbra: 3 } },
+        { t: "Un vaso que pueda llevar en una mano mientras me agarro con la otra.", w: { multitud: 3 } },
+        { t: "Un frasco de vidrio bien limpio y con etiqueta.", w: { pluvia: 4 } }
       ]
     },
     {
-      tag: "Escala de confianza institucional ciega",
-      dept: "Auditoría del Corazón",
-      text: "Alguien que la ama le dice: «confía en mí, esto es mucho mejor de lo que parece». Usted:",
+      tag: "Prueba de confianza",
+      dept: "Área de Confianza",
+      text: "Te digo: «confía en mí, esto es mejor de lo que parece». ¿Qué haces?",
       options: [
-        { t: "Cierro los ojos y voy directo al primer sorbo.", w: { penumbra: 4 } },
-        { t: "Le pido que lo haga primero. Y lo grabo, por si acaso.", w: { multitud: 3 } },
-        { t: "Solicito el análisis de laboratorio antes de proceder.", w: { pluvia: 3 } }
+        { t: "Cierro los ojos y pruebo.", w: { penumbra: 4 } },
+        { t: "Te digo que pruebes tú primero. Y te grabo.", w: { multitud: 3 } },
+        { t: "Pregunto qué es, de dónde salió y quién lo hizo.", w: { pluvia: 3 } }
       ]
     },
     {
-      tag: "Diagnóstico de vínculo territorial",
-      dept: "Instituto Distrital de Sentimientos",
-      text: "Bogotá, en una sola palabra. Piense rápido, esto mide su verdad profunda.",
+      tag: "Una sola palabra",
+      dept: "Área de Bogotá",
+      text: "Bogotá en una sola palabra. Rápido, sin pensarlo.",
       options: [
-        { t: "«Sótano».", w: { penumbra: 4 } },
-        { t: "«Movimiento».", w: { multitud: 4 } },
-        { t: "«Cielo».", w: { pluvia: 4 } }
+        { t: "Escondida.", w: { penumbra: 4 } },
+        { t: "Movida.", w: { multitud: 4 } },
+        { t: "Nublada.", w: { pluvia: 4 } }
       ]
     },
     {
-      tag: "Escala Likert del romanticismo aplicado",
-      dept: "Departamento de Amor Cuantificable",
-      text: "Marque la opción que su criterio profesional considere más romántica:",
+      tag: "Tema: lo romántico",
+      dept: "Área del Amor",
+      text: "¿Qué te parece más romántico?",
       options: [
-        { t: "Compartir algo caliente en un lugar escondido, a media luz.", w: { penumbra: 4 } },
-        { t: "Mirarnos a los ojos rodeados de doscientos desconocidos.", w: { multitud: 4 } },
-        { t: "Mojarnos juntos y no correr a buscar techo.", w: { pluvia: 4 } }
+        { t: "Compartir algo calientico en un lugar escondido.", w: { penumbra: 4 } },
+        { t: "Mirarnos a los ojos con doscientos desconocidos alrededor.", w: { multitud: 4 } },
+        { t: "Mojarnos los dos y no salir corriendo a buscar techo.", w: { pluvia: 4 } }
       ]
     },
     {
-      tag: "Ítem final · Prueba de lealtad al proceso",
-      dept: "Gerencia General del Cumpleaños",
-      text: "Última pregunta, y es la más importante. Si todo este quiz fuera una trampa, usted:",
+      tag: "Última pregunta",
+      dept: "Gerencia del Cumpleaños",
+      text: "La última, y es la más importante: si todo esto fuera una trampa, ¿qué harías?",
       options: [
-        { t: "Caería igual, porque confío ciegamente en quien la puso.", w: { penumbra: 2, multitud: 1, pluvia: 1 } },
-        { t: "Ya me di cuenta hace seis preguntas y seguí jugando por amor.", w: { multitud: 2, penumbra: 1 } },
-        { t: "Exijo una auditoría externa inmediata. Pero primero terminemos.", w: { pluvia: 2, multitud: 1 } }
+        { t: "Caigo igual, porque confío en ti.", w: { penumbra: 2, multitud: 1, pluvia: 1 } },
+        { t: "Ya me di cuenta hace rato y seguí jugando de todas formas.", w: { multitud: 2, penumbra: 1 } },
+        { t: "Sigo jugando, pero después me explicas todo con calma.", w: { pluvia: 2, multitud: 1 } }
       ]
     }
   ];
@@ -270,8 +270,9 @@
     setTimeout(function () {
       cur.classList.remove("is-visible", "is-in", "is-out");
       next.classList.add("is-visible", "is-in");
-      try { window.scrollTo({ top: 0, behavior: "smooth" }); }
-      catch (e) { window.scrollTo(0, 0); }
+      // Salto instantáneo al cambiar de pantalla: un scroll animado aquí
+      // pelea con el dedo del usuario y da la sensación de no poder subir.
+      window.scrollTo(0, 0);
     }, 340);
   }
 
@@ -304,9 +305,7 @@
 
     el.qCounter.textContent = "Pregunta " + (state.index + 1) + " de " + total;
     el.qDept.textContent = q.dept;
-    el.qTag.textContent = q.tag.indexOf("Ítem") === 0
-      ? q.tag
-      : "Ítem " + (state.index + 1) + " · " + q.tag;
+    el.qTag.textContent = q.tag;
     el.qText.textContent = q.text;
     el.qProgress.style.width = ((state.index) / total * 100) + "%";
 
@@ -528,16 +527,37 @@
       rows.forEach(function (r) { r.node.style.width = r.pct + "%"; });
     }, 700);
 
-    // El giro: dejarla procesar la locura y luego romper la ilusión
+    // El giro: dejarla procesar la locura y luego romper la ilusión.
+    // Nada de scroll automático aquí: aparece abajo y ella baja cuando quiera.
     later(function () {
       el.twistBlock.hidden = false;
-      try { el.twistBlock.scrollIntoView({ behavior: "smooth", block: "center" }); }
-      catch (e) { /* no-op */ }
+      showHint();
     }, 7200);
 
     later(function () {
       el.inviteBlock.hidden = false;
     }, 10400);
+  }
+
+  /* Aviso discreto de "hay más abajo", ya que no movemos la página sola */
+  function showHint() {
+    var hint = $("scrollHint");
+    if (!hint) return;
+
+    // Si el bloque ya se ve completo, no hace falta avisar nada.
+    var r = el.twistBlock.getBoundingClientRect();
+    if (r.top < window.innerHeight - 60) return;
+
+    hint.hidden = false;
+    hint.classList.add("is-on");
+
+    function dismiss() {
+      hint.classList.remove("is-on");
+      window.removeEventListener("scroll", dismiss);
+      later(function () { hint.hidden = true; }, 400);
+    }
+    window.addEventListener("scroll", dismiss, { passive: true });
+    later(dismiss, 9000);
   }
 
   /* =========================================================
@@ -551,6 +571,8 @@
     state.lock = false;
     el.twistBlock.hidden = true;
     el.inviteBlock.hidden = true;
+    var hint = $("scrollHint");
+    if (hint) { hint.classList.remove("is-on"); hint.hidden = true; }
     renderQuestion();
     showScreen("screen-quiz");
   }
