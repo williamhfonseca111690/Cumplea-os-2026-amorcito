@@ -183,7 +183,16 @@ svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-wi
   box-shadow:var(--shadow-card);
   overflow:hidden;
   transform-origin:center center;
-  will-change:transform;
+}
+
+/* Plan B: si el navegador no soporta `zoom`, encogemos con transform.
+   Pero transform + backdrop-filter deja un rectángulo fantasma del tamaño
+   sin escalar, así que en ese caso apagamos el vidrio y usamos fondo sólido. */
+.card.is-scaled{
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  background:
+    linear-gradient(160deg,rgba(255,124,192,.09),rgba(255,124,192,0) 42%),
+    rgba(8,16,58,.94);
 }
 .card::before{
   content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
@@ -452,10 +461,11 @@ svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-wi
   100%{transform:none}
 }
 
-.twist__when{font-family:var(--font-display);font-weight:600;
-  font-size:clamp(1.06rem,4.6vw,1.55rem);line-height:1.3;color:var(--white);
-  max-width:24ch;margin:0 auto}
-.twist__when strong{color:var(--fuchsia-300);font-weight:700;
+/* Día, fecha y hora — vive en la pantalla de la invitación */
+.when{font-family:var(--font-display);font-weight:600;
+  font-size:clamp(1.1rem,4.8vw,1.6rem);line-height:1.32;color:var(--white);
+  max-width:24ch;margin:0 auto 16px}
+.when strong{color:var(--fuchsia-300);font-weight:700;
   text-shadow:0 0 20px rgba(255,61,160,.55)}
 
 /* ==========================================================

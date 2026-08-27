@@ -240,6 +240,27 @@
      La tarjeta se escala hasta caber en el alto disponible.
      Así nunca hay scroll, en ningún celular.
      ========================================================= */
+  // `zoom` cambia el layout de verdad, así que no pelea con el backdrop-filter.
+  // transform sí lo hace: deja un rectángulo fantasma del tamaño sin escalar.
+  var CAN_ZOOM = (typeof CSS !== "undefined" && CSS.supports &&
+                  CSS.supports("zoom", "0.9"));
+
+  function applyScale(card, k) {
+    if (k >= 1) {
+      card.style.zoom = "";
+      card.style.transform = "none";
+      card.classList.remove("is-scaled");
+    } else if (CAN_ZOOM) {
+      card.style.transform = "none";
+      card.classList.remove("is-scaled");
+      card.style.zoom = k.toFixed(4);
+    } else {
+      card.style.zoom = "";
+      card.style.transform = "scale(" + k.toFixed(4) + ")";
+      card.classList.add("is-scaled");
+    }
+  }
+
   function fitCurrent() {
     var screen = document.querySelector(".screen.is-visible");
     if (!screen) return;
@@ -247,14 +268,19 @@
     var stage = $("stage");
     if (!card || !stage) return;
 
-    card.style.transform = "none";
+    applyScale(card, 1);
     var avail = stage.clientHeight;
-    var h = card.offsetHeight;
-    if (!avail || !h) return;
+    if (!avail) return;
 
-    if (h > avail) {
-      var k = Math.max(avail / h, 0.5);
-      card.style.transform = "scale(" + k.toFixed(4) + ")";
+    // Con zoom el texto puede re-partirse en otras líneas, así que
+    // convergemos en unas pocas pasadas en vez de calcular una sola vez.
+    var k = 1, guard = 0;
+    while (guard++ < 6) {
+      var h = card.getBoundingClientRect().height;
+      if (!h || h <= avail) break;
+      k = Math.max(k * (avail / h) * 0.995, 0.5);
+      applyScale(card, k);
+      if (k <= 0.5) break;
     }
   }
 
@@ -497,8 +523,8 @@
       rows.forEach(function (r) { r.node.style.width = r.pct + "%"; });
     }, 650);
 
-    // Que lo procese, y después le rompemos la ilusión
-    later(function () { showScreen("screen-twist"); }, 7000);
+    // De aquí en adelante ella avanza con el botón "Siguiente":
+    // plan -> ¿Será? -> día, hora y vestuario.
   }
 
   /* =========================================================
@@ -564,6 +590,7 @@
 
     el.btnNext.addEventListener("click", goNext);
     el.btnBack.addEventListener("click", goBack);
+    $("btnTwist").addEventListener("click", function () { showScreen("screen-twist"); });
     $("btnInvite").addEventListener("click", function () { showScreen("screen-invite"); });
     $("btnRestart").addEventListener("click", restart);
 
