@@ -216,8 +216,24 @@ svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-wi
   background:linear-gradient(104deg,#FFF 4%,var(--blush) 32%,var(--fuchsia-400) 66%,var(--fuchsia-300) 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 6px 22px rgba(233,25,140,.34))}
+.title__name{font-size:clamp(1.72rem,7.6vw,2.85rem);font-style:italic;font-weight:600;
+  letter-spacing:-.02em;line-height:1.06;margin-top:2px;
+  background:linear-gradient(96deg,var(--fuchsia-300) 0%,var(--blush) 44%,#FFF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 5px 18px rgba(255,124,192,.30))}
+
 .title__script{font-size:clamp(1.02rem,4.1vw,1.42rem);font-style:italic;font-weight:400;
   color:var(--ink-soft);line-height:1.3;max-width:22ch}
+
+/* Franja de bienvenida al quiz */
+.welcome{display:flex;flex-direction:column;gap:3px;text-align:center;
+  margin-top:26px;padding:17px 18px;border-radius:var(--radius-sm);
+  border:1px solid var(--line-strong);
+  background:linear-gradient(150deg,rgba(233,25,140,.20),rgba(31,59,196,.20))}
+.welcome__k{font-size:.64rem;letter-spacing:.20em;text-transform:uppercase;font-weight:600;
+  color:var(--fuchsia-300)}
+.welcome__t{font-family:var(--font-display);font-weight:600;letter-spacing:-.012em;
+  font-size:clamp(1.02rem,4.2vw,1.28rem);line-height:1.26;color:var(--white)}
 
 .prose p{margin-bottom:14px;font-size:clamp(.95rem,3.5vw,1.045rem);color:var(--ink-soft)}
 .prose p:last-child{margin-bottom:0}
